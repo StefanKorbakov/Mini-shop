@@ -1,19 +1,31 @@
+class Product {
+    title = 'DEFAULT';
+    imageUrl;
+    description;
+    price;
+
+    constructor(title, image, desc, price) {
+        this.title = title;
+        this.imageUrl = image;
+        this.description = desc;
+        this.price = price;
+    }
+}
+
 const productList = {
     products: [
-        {
-            title: 'A pillow',
-            imageUrl:
-                'https://i1.adis.ws/i/dreams/719-00201_main-shot_01_therapur-cool-pillow',
-            price: 19.99,
-            description: 'A Soft pillow!',
-        },
-        {
-            title: 'A carpet',
-            imageUrl:
-                'https://www.carpetship.com/wp-content/uploads/2019/08/Blue-Tabriz-Rug-Blue-Persian-carpet-for-sale-2x3m-DR406-6870.jpg',
-            price: 89.99,
-            description: 'A carpet which you might like - or not!',
-        },
+        new Product(
+            'A Pillow',
+            'https://i1.adis.ws/i/dreams/719-00201_main-shot_01_therapur-cool-pillow',
+            'A Soft pillow!',
+            19.99
+        ),
+        new Product(
+            'A Carpet',
+            'https://www.carpetship.com/wp-content/uploads/2019/08/Blue-Tabriz-Rug-Blue-Persian-carpet-for-sale-2x3m-DR406-6870.jpg',
+            'A carpet which you might like - or not!',
+            89.99
+        )
     ],
     render() {
         const renderHook = document.getElementById('app');
@@ -36,7 +48,7 @@ const productList = {
             prodList.append(prodEl);
         }
         renderHook.append(prodList);
-    }
-}
+    },
+};
 
 productList.render();
